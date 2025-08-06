@@ -15,6 +15,9 @@ int main() {
     // \n: Newline character - moves the cursor to the beginning of the next line.
     std::cout << "This is line one.\nThis is line two (using \\n)." << std::endl;
 
+    // \a: Audible alert 
+    std::cout << "(using \\a)" << std::endl;
+
     // \t: Horizontal tab - moves the cursor to the next tab stop.
     std::cout << "Column1\tColumn2\tColumn3 (using \\t)" << std::endl;
     std::cout << "Item A\tItem B\tItem C" << std::endl;
