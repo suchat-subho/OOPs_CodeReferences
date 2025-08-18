@@ -30,7 +30,7 @@ int main() {
         // Print the progress bar
         std::cout << "\r["; // Carriage return to move cursor to start of line, then start of bar
         for (int j = 0; j < num_hashes; ++j) {
-            std::cout << "#"; // Print filled part
+            std::cout << "#\a"; // Print filled part
         }
         for (int j = 0; j < bar_width - num_hashes; ++j) {
             std::cout << " "; // Print empty part
