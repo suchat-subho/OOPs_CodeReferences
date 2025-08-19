@@ -16,7 +16,6 @@
 #define DEBUG_PRINT(var, val) printf("DEBUG: " #var " = %d, " #val " = %s\n", var, val)
 
 int main() {
-    printf("Start Program\a\n");
     int my_integer = 100;
     float pi_value = 3.14159f;
     char my_char = 'A';
