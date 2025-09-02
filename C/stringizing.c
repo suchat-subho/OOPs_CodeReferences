@@ -8,11 +8,13 @@
 
 #include <stdio.h>
 
-// Define a macro that uses the stringizing operator (#)
-// The #x converts the argument 'x' into a string literal.
-#define PRINT_VALUE(x) printf("The value of " #x " is %d\n", x)
+#define PRINT_VALUE_INT(x) printf("The value of " #x " is %d\n", x)
+#define PRINT_VALUE_FLOAT(x) printf("The value of " #x " is %.2f\n", x)
+#define PRINT_VALUE_CHAR(x) printf("The value of " #x " is %c\n", x)
+#define PRINT_VALUE_STRING(x) printf("The string " #x " contains: %s\n", x)
 
 // Another example: concatenating strings using ## (token pasting) and #
+// The #var stringizes the variable name, and #val stringizes the string literal.
 #define DEBUG_PRINT(var, val) printf("DEBUG: " #var " = %d, " #val " = %s\n", var, val)
 
 int main() {
@@ -21,15 +23,10 @@ int main() {
     char my_char = 'A';
     const char* my_string = "Hello Macro";
 
-    // When PRINT_VALUE(my_integer) is called, the preprocessor
-    // replaces it with: printf("The value of " "my_integer" " is %d\n", my_integer);
-    // The string literals are then concatenated by the compiler.
-    PRINT_VALUE(my_integer);
-
-    // You can use it with different types, but the format specifier must match
-    printf("The value of " #pi_value " is %.2f\n", pi_value);
-    printf("The value of " #my_char " is %c\n", my_char);
-    printf("The string " #my_string " contains: %s\n", my_string);
+    PRINT_VALUE_INT(my_integer);
+    PRINT_VALUE_FLOAT(pi_value);
+    PRINT_VALUE_CHAR(my_char);
+    PRINT_VALUE_STRING(my_string);
 
     int count = 5;
     DEBUG_PRINT(count, "items"); // Example using DEBUG_PRINT macro
