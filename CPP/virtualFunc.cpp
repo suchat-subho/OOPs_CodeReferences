@@ -1,37 +1,37 @@
 #include <iostream>
 #include <cstring>
+using namespace std;
 
-class MS {
+class Cls {
 public:
-	char* d;
+	char* val;
 	int l;
 
-	MS(const char* s) {
-    	  l = strlen(s); d = new char[l + 1]; strcpy(d, s);
-    	  std::cout << "C: '" << d << "'\n";
+	Cls(const char* s) {
+    	  l = strlen(s); val = new char[l + 1]; strcpy(val, s);
+    	  cout << "C: '" << val << "'\n";
 	}
 
-	~MS() {
-    	  if (d) {std::cout << "D: '" << d << "'\n";delete[] d; d = nullptr;}
-	}
+	~Cls() {if (val) {cout << "D: '" << val << "'\n";delete[] val; val = nullptr;}}
 
-	void ap(const char* sfx) {
+	void foo(const char* sfx) {
     	  int nl = l + strlen(sfx); char* nd = new char[nl + 1];
-    	  strcpy(nd, d); strcat(nd, sfx); delete[] d; d = nd;
+    	  strcpy(nd, val); strcat(nd, sfx); delete[] val; val = nd;
     	  l = nl;
-    	  std::cout << "A: '" << d << "'\n";
+    	  cout << "A: '" << val << "'\n";
 	}
-	const char* cs() const {return d;}
+	const char* cs() const {return val;}
 };
 
-void pS(MS s) {
-	std::cout << "P_B: '" << s.cs() << "'\n";	s.ap(" World!");
-	std::cout << "P_A: '" << s.cs() << "'\n";
+void pS(Cls s) {
+	cout << "P_1: '" << s.cs() << "'\n";
+	s.foo(" World!");
+	cout << "P_2: '" << s.cs() << "'\n";
 }
 
 int main() {
-	MS o("Hello");
-	std::cout << "M_B: '" << o.cs() << "'\n"; pS(o);
-	std::cout << "M_A: '" << o.cs() << "'\n";
+	Cls o("Hello");
+	cout << "M_1: '" << o.cs() << "'\n"; pS(o);
+	cout << "M_2: '" << o.cs() << "'\n";
 	return 0;
 }
