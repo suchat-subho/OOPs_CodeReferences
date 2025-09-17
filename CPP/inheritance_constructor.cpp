@@ -14,7 +14,9 @@ class Base{
 
 class Derived: public Base{
     public:
-        //Derived(int x):Base(x){ }
+        Derived(int x):Base(x){ }
+        Derived():Base(0){ }
+
 };
 
 int main(){
