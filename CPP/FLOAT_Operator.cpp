@@ -204,8 +204,50 @@ int main() {
     cout << "G [" << -.56 * 3 << "]:";
     G.print();cout<<endl;
     // (Total: 1 / 4 for FLOAT–int arithmetic)
+    cout << endl;
 
 
+
+
+    // ===== Negative Test Cases =====
+    cout << "\n\n===== NEGATIVE TEST CASES =====\n";
+
+    // 1. Negative + Negative
+    FLOAT N1(-25, -1);   // -2.5
+    FLOAT N2(-40, -1);   // -4.0
+    FLOAT N3 = N1 + N2;
+    cout << "\n(-2.5) + (-4.0) = ";
+    N3.print();          // Expected: -6.5
+
+    // 2. Negative * Negative
+    FLOAT N4 = N1 * N2;
+    cout << "\n(-2.5) * (-4.0) = ";
+    N4.print();          // Expected: positive result
+
+    // 3. Negative + Positive (larger magnitude negative)
+    FLOAT N5(30, -1);    // 3.0
+    FLOAT N6(-80, -1);   // -8.0
+    FLOAT N7 = N5 + N6;
+    cout << "\n3.0 + (-8.0) = ";
+    N7.print();          // Expected: -5.0
+
+    // 4. Result mantissa becomes zero
+    FLOAT N8(50, -1);    // 5.0
+    FLOAT N9(-50, -1);   // -5.0
+    FLOAT N10 = N8 + N9;
+    cout << "\n5.0 + (-5.0) = ";
+    N10.print();         // Expected: 0e-1 or equivalent
+
+    // 5. Assignment self-test
+    FLOAT N11(-99, -2);
+    N11 = N11;           // Self-assignment
+    cout << "\nSelf assignment (-0.99) = ";
+    N11.print();
+
+    // 6. Comparison of equivalent values
+    FLOAT N12(100, -2);  // 1.00
+    FLOAT N13(10, -1);   // 1.0
+    cout << "\n\n(1.00 == 1.0)?  " << (N12 == N13 ? "YES" : "NO");
     cout << endl;
     return 0;
 }
