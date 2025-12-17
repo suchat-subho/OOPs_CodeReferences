@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 
@@ -10,14 +11,14 @@ private:
     int exponent;   // ✔ 0.25 mark: private integer data member
 // (Total: 0.5 for data members)
 
-
-
-
     // Manual integer shifting: returns m * 10^n using loop
-    int shift10(int m, int n) const {
+    /*int shift10(int m, int n) const {
         for (int i = 0; i < n; i++)
             m *= 10;
         return m;
+    }*/
+    int shift10(int m, int n) const {
+        return m * static_cast<int>(pow(10, n));
     }
 
 
