@@ -244,6 +244,12 @@ int main() {
     cout << "\n5.0 + (-5.0) = ";
     N10.print();         // Expected: 0e-1 or equivalent
 
+    // 4.a. Equal with different exponent
+    N9.setExponent(-2); N9.setMantissa(500);
+    cout << "\n\n(N8 == N9)?  " << (N8 == N9 ? "YES" : "NO") ;
+    cout <<endl;         // Expected: YES
+    
+
     // 5. Assignment self-test
     FLOAT N11(-99, -2);
     N11 = N11;           // Self-assignment
