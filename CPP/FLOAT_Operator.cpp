@@ -173,7 +173,13 @@ int main() {
     FLOAT C = A + B;      // ✔ 0.5 mark
     cout << "C=A+B[" << 10.234 + -.56 << "]:";
     C.print();
-    cout<<endl; 
+    cout<<endl;
+
+    C = B + A;     
+    cout << "C=A+B[" << -.56 + 10.234 << "]:";
+    C.print();
+    cout<<endl;
+
     FLOAT D = A * B;      // ✔ 0.5 mark
     cout << "D=A*B [" << 10.234 * -.56 << "]:";
     D.print();cout<<endl;
@@ -232,7 +238,7 @@ int main() {
     N7.print();          // Expected: -5.0
 
     // 4. Result mantissa becomes zero
-    FLOAT N8(50, -1);    // 5.0
+    FLOAT N8(5000, -3);    // 5.0
     FLOAT N9(-50, -1);   // -5.0
     FLOAT N10 = N8 + N9;
     cout << "\n5.0 + (-5.0) = ";
