@@ -145,8 +145,8 @@ public:
 
 // FLOAT + int
 FLOAT operator+(const FLOAT &f, int x) {
-    FLOAT temp(x, 0);       // ✔ 0.5 mark: int converted to FLOAT
-    return f + temp;        // ✔ 0.5 mark: reuse FLOAT + FLOAT logic
+    FLOAT temp(x, 0);
+    return f + temp;
 }
 // ✔ Total: 1 / 1 mark; 0/1 if incorrect
 
@@ -157,7 +157,7 @@ FLOAT operator+(const FLOAT &f, int x) {
 FLOAT operator*(const FLOAT &f, int x) {
     return FLOAT(f.mantissa * x, f.exponent);   // ✔ 1 mark
 }
-// ✔ Total: 1 / 1 mark
+// ✔ Total: 1 / 1 mark; 0/1 if incorrect
 
 
 // ===================== MAIN =====================
