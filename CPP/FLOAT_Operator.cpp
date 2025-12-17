@@ -12,7 +12,8 @@ private:
 // (Total: 0.5 for data members)
 
     // Manual integer shifting: returns m * 10^n using loop
-    /*int shift10(int m, int n) const {
+    /*   OR
+    int shift10(int m, int n) const {
         for (int i = 0; i < n; i++)
             m *= 10;
         return m;
@@ -115,12 +116,12 @@ public:
 
 
     // ========== Assignment ==========
-    void operator=(const FLOAT &b) {
+    FLOAT & operator=(const FLOAT &b) {
         if (this != &b) {   // ✔ 0.5 mark: self-assignment check
             mantissa = b.mantissa;
             exponent = b.exponent;
         }
-        //return *this;       // ✔ 0.5 mark: returns reference
+        return *this;       // ✔ 0.5 mark: returns reference
     }
     // ✔ Total: 1/1 mark, 0.5/1 if Not appropriate return type (e.g. FLOAT &)
 
