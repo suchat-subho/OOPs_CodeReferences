@@ -1,3 +1,4 @@
+/*** In linux use `sudo cat /proc/<PID>/maps` to see the segment sizes and addresses. ***/
 #include <iostream>
 #include <iomanip>
 #include <cstdint>
@@ -506,5 +507,7 @@ cout << dec << noshowbase;
     delete heapDouble;
     delete heapObj;
 
+    cout << "\nPress any key to continue...";
+    cin.get();
     return 0;
 }
