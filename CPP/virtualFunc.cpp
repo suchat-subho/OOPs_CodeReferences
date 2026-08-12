@@ -9,6 +9,7 @@ public:
 
 	Cls(const char* s) {
     	  l = strlen(s); val = new char[l + 1]; strcpy(val, s);
+    	  printf("C: %p",val);
     	  cout << "C: '" << val << "'\n";
 	}
 
