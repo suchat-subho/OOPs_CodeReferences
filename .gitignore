@@ -1,0 +1,125 @@
+# ==============================
+# Build directories
+# ==============================
+build/
+Build/
+out/
+bin/
+obj/
+debug/
+release/
+
+# ==============================
+# Compiled binaries
+# ==============================
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+
+# ==============================
+# Debug / profiling files
+# ==============================
+*.dSYM/
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.profraw
+
+# ==============================
+# CMake
+# ==============================
+CMakeCache.txt
+CMakeFiles/
+cmake-build-*/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+Makefile
+
+# ==============================
+# Make
+# ==============================
+*.mk
+
+# ==============================
+# Ninja
+# ==============================
+.ninja_deps
+.ninja_log
+build.ninja
+
+# ==============================
+# Visual Studio / VS Code
+# ==============================
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==============================
+# CLion
+# ==============================
+.idea/
+
+# ==============================
+# Code::Blocks
+# ==============================
+*.depend
+*.layout
+
+# ==============================
+# Qt
+# ==============================
+*.pro.user
+*.pro.user.*
+.qmake.stash
+
+# ==============================
+# macOS
+# ==============================
+.DS_Store
+
+# ==============================
+# Linux
+# ==============================
+*~
+.directory
+
+# ==============================
+# Windows
+# ==============================
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Test / coverage output
+# ==============================
+coverage/
+*.gcov
+*.lcov
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ==============================
+# Generated files
+# ==============================
+generated/
+generated/*
